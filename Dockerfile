@@ -8,7 +8,7 @@ RUN  yum install --nogpg -y epel-release\
   && chown -R xrootd:xrootd /tmp/data\
   && echo "hello" >> /tmp/data/file
 
-COPY --chown xrootd:xrootd xrootd-config.cfg /etc/xrootd
+COPY --chown=xrootd:xrootd xrootd-config.cfg /etc/xrootd
 
 USER xrootd:xrootd
-CMD ["xrootd","-d","-c","/etc/xrootd/xrootd-config.cfg","-n","test-ls"]
+CMD ["xrootd","-d","-c","/etc/xrootd/xrootd-config.cfg"]
